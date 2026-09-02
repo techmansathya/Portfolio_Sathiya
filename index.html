@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <title>Sathiya Narayanan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,6 +127,8 @@
     width:100%;
   }
   .copy-email:hover{border-color:var(--cyan); color:var(--cyan);}
+  .resume-dl{background:linear-gradient(90deg, var(--blue), var(--violet)); color:#fff; font-weight:600; border:none; text-decoration:none; box-sizing:border-box;}
+  .resume-dl:hover{border-color:transparent; color:#fff; filter:brightness(1.08);}
   .side-social{display:flex; gap:14px; padding-left:2px;}
   .side-social a{color:var(--text-faint); transition:color .15s ease;}
   .side-social a:hover{color:var(--cyan);}
@@ -141,6 +144,9 @@
     font-family:var(--font-mono); font-size:12px; text-decoration:none; color:#0a0d18; font-weight:600;
     background:linear-gradient(90deg, var(--cyan), var(--violet)); padding:9px 14px; border-radius:6px;
   }
+  .mnav-resume{display:flex; align-items:center; justify-content:center; width:38px; height:38px; flex-shrink:0;
+    border:1px solid var(--border-strong); border-radius:8px; color:var(--text); margin-left:8px; transition:border-color .15s ease, color .15s ease;}
+  .mnav-resume:hover{border-color:var(--cyan); color:var(--cyan);}
 
   .main{}
   @media (min-width:960px){
@@ -427,10 +433,17 @@
   .contact h2{font-size:clamp(2.2rem,4.8vw,3.6rem); max-width:14ch;
     background:linear-gradient(100deg, var(--cyan), var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .contact-grid{display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap; margin-top:40px;}
-  .contact-links{display:flex; flex-direction:column; gap:12px;}
-  .contact-links a{font-family:var(--font-mono); font-size:15px; text-decoration:none; color:var(--text);
-    border-bottom:1px solid var(--border-strong); padding-bottom:2px; width:fit-content; transition:color .15s ease, border-color .15s ease;}
-  .contact-links a:hover{color:var(--cyan); border-color:var(--cyan);}
+  .contact-links{display:flex; flex-direction:column; gap:14px;}
+  .contact-links a{display:flex; align-items:center; flex-wrap:wrap; row-gap:6px; gap:12px; font-family:var(--font-mono); font-size:15px;
+    text-decoration:none; color:var(--text); width:fit-content;}
+  .contact-links .tag{font-size:10.5px; padding:4px 9px;}
+  .contact-links .clink-ic{width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; background:color-mix(in srgb, var(--acc) 16%, transparent); color:var(--acc);
+    border:1px solid color-mix(in srgb, var(--acc) 40%, transparent); transition:box-shadow .15s ease;}
+  .contact-links .clink-ic svg{width:16px; height:16px;}
+  .contact-links .clink-text{border-bottom:1px solid var(--border-strong); padding-bottom:2px; transition:color .15s ease, border-color .15s ease;}
+  .contact-links a:hover .clink-text{color:var(--cyan); border-color:var(--cyan);}
+  .contact-links a:hover .clink-ic{box-shadow:0 0 10px color-mix(in srgb, var(--acc) 55%, transparent);}
   .footer-meta{font-family:var(--font-mono); font-size:12px; color:var(--text-faint); text-align:right;}
   footer{padding:28px 0; border-top:1px solid var(--border);}
   .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--font-mono); font-size:12px; color:var(--text-faint);}
@@ -453,11 +466,17 @@
       <li><a href="#top" class="active" data-sec="top"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>Home</a></li>
       <li><a href="#about" data-sec="about"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg></span>About</a></li>
       <li><a href="#experience" data-sec="experience"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>Experience</a></li>
+      <li><a href="#annexure" data-sec="annexure"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg></span>Projects</a></li>
       <li><a href="#skills" data-sec="skills"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6L2 12l6 6M16 6l6 6-6 6"/></svg></span>Skills</a></li>
+      <li><a href="#education" data-sec="education"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg></span>Education</a></li>
       <li><a href="#contact" data-sec="contact"><span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>Contact</a></li>
     </ul>
   </div>
   <div class="side-bottom">
+    <a class="copy-email resume-dl" href="lib/resume.pdf" download="Sathiya_Narayanan_Resume.pdf">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+      Download Resume
+    </a>
     <button class="copy-email" id="copyEmailBtn" type="button">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
       Copy Email
@@ -472,7 +491,7 @@
 
 <div class="mnav">
   <div class="side-logo">SN.</div>
-  <a class="mnav-cta" href="mailto:sathiya.nan6@gmail.com">Get in touch</a>
+  <a class="mnav-cta" href="mailto:sathiya.nan6@gmail.com">Get in touch</a><a class="mnav-resume" href="lib/resume.pdf" download="Sathiya_Narayanan_Resume.pdf" aria-label="Download Resume" title="Download Resume"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg></a>
 </div>
 
 <div class="dotnav">
@@ -480,7 +499,9 @@
   <a href="#about" data-dot="about"></a>
   <a href="#building" data-dot="building"></a>
   <a href="#experience" data-dot="experience"></a>
+  <a href="#annexure" data-dot="annexure"></a>
   <a href="#skills" data-dot="skills"></a>
+  <a href="#education" data-dot="education"></a>
   <a href="#contact" data-dot="contact"></a>
 </div>
 
@@ -495,12 +516,15 @@
           <div class="kicker reveal">Technical Lead → AI Solution Engineer</div>
           <h1 class="reveal">Sathiya<br>Narayanan.</h1>
           <div class="hero-role reveal">Enterprise &amp; Digital Banking Platforms · <strong>Agentic AI Builder</strong></div>
-          <p class="hero-lede reveal">Nine years shipping <b>digital banking platforms</b> across seven countries.
-            Now founder-building a <b>Banking Copilot AI Agent</b> and an <b>API Gateway platform</b> — RAG, MCP
-            tool integration, and LLM orchestration.</p>
+          <p class="hero-lede reveal">Nine years shipping <b>enterprise-scale digital banking platforms</b> — as
+            direct bank employee, consulting technical lead, and founder. Hands-on engineering depth, technical
+            leadership and end-to-end SDLC ownership on every engagement. Now designing, architecting and building
+            products across web, mobile, and <b>agentic AI</b>, applying the same regulated-industry discipline to
+            modern technology.</p>
           <div class="hero-actions reveal">
             <a class="btn btn-primary" href="#experience">View Experience →</a>
             <a class="btn btn-ghost" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="lib/resume.pdf" download="Sathiya_Narayanan_Resume.pdf"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg> Download Resume</a>
           </div>
           <div class="scroll-cue reveal"><span class="line"></span>Scroll</div>
         </div>
@@ -537,13 +561,11 @@
         <div class="reveal">
           <span class="eyebrow" style="--acc:var(--cyan);">Who I am</span>
           <h2 class="who-head">Enterprise <span class="hl">scale</span>, agentic <span class="hl2">future</span>.</h2>
-          <p class="who-text">I'm a technology leader who has spent nine years building and delivering
-            enterprise-scale digital banking, mobile and web platforms across Malaysia, India, Thailand, Jordan,
-            Lebanon, Saudi Arabia and Qatar — as direct bank employee, consulting technical lead, and founder.</p>
-          <p class="who-text">Since November 2024 I've been building two AI products end to end as a solo founding
-            engineer: an enterprise API gateway, and a Banking Copilot AI Agent covering agent orchestration, RAG,
-            MCP tool integration and LLM APIs. Nine years of regulated-industry discipline, now applied to modern
-            agentic AI architecture.</p>
+          <p class="who-text">I'm a technology leader who has spent nine years shipping digital banking platforms,
+            working with various clients — as direct bank employee, consulting technical lead, and founder.</p>
+          <p class="who-text">Since November 2024 I've also been designing and architecting products across web,
+            mobile, and agentic AI — as founder, building solo on some and leading a small engineering team on
+            others.</p>
           <div class="hero-actions" style="margin-top:28px;">
             <a class="btn btn-ghost" href="#experience">See full experience ↓</a>
           </div>
@@ -584,8 +606,9 @@
           <span class="eyebrow" style="--acc:var(--blue);">Positioning</span>
           <p style="margin-top:14px;">My work spans hands-on full-stack engineering, technical leadership of
             delivery teams, solution design, architecture review and direct stakeholder ownership across the full
-            SDLC. I'm now looking for an <strong>AI Solution Engineer</strong>, <strong>AI Lead</strong> or
-            <strong>AI Product Lead</strong> role that designs and delivers AI systems inside real enterprise
+            SDLC. I'm now looking for a <strong>Technical Lead</strong>, <strong>Technical Manager</strong>,
+            <strong>Product Lead</strong>, <strong>Solution Architect</strong>, <strong>AI Solution Engineer</strong>,
+            <strong>AI Lead</strong> or <strong>AI Product Lead</strong> role that designs and delivers AI systems inside real enterprise
             constraints — legacy core-system integration, security and compliance, release governance,
             multi-country stakeholder delivery.</p>
         </div>
@@ -608,8 +631,9 @@
       <div class="sec-head reveal">
         <div><span class="eyebrow" style="--acc:var(--blue);">Now building · Nov 2024 – present</span>
           <h2 style="margin-top:10px;">Founder &amp; Independent Technical Consultant</h2></div>
-        <p class="sec-note">Self-funded startup, India / remote. Four products built solo end to end, plus cloud and
-          architecture advisory engagements on the side.</p>
+        <p class="sec-note">Self-funded startup, India / remote. Four products as founder and architect — solo end
+          to end on two, leading a small engineering team on the other two — plus cloud and architecture advisory
+          engagements on the side.</p>
       </div>
       <div class="proj-grid">
         <article class="proj-card reveal" style="--acc:var(--blue); --glow:var(--glow-blue);">
@@ -652,15 +676,15 @@
           <div class="proj-top">
             <div>
               <h3>MyEstate</h3>
-              <div class="proj-meta">Founder &amp; Developer · real estate marketplace, no-broker model</div>
+              <div class="proj-meta">Founder &amp; Solution Architect · real estate marketplace, no-broker model</div>
             </div>
             <span class="badge" style="--bc:var(--green);">Beta</span>
           </div>
           <p>A real estate marketplace connecting property owners, tenants and buyers directly — no broker,
             no middleman commission — in the mould of NoBroker's model. Listings, search and direct contact
             between owners and seekers.</p>
-          <p class="proj-why">Built solo alongside the AI work, applying the same end-to-end delivery approach
-            to a different market: direct-to-consumer real estate.</p>
+          <p class="proj-why">Leading a small engineering team as architect, applying the same end-to-end delivery
+            discipline to a different market: direct-to-consumer real estate.</p>
           <div class="tag-row">
             <span class="tag">Property listings</span><span class="tag">Search &amp; filters</span>
             <span class="tag">Direct owner contact</span><span class="tag">No broker fees</span>
@@ -759,11 +783,12 @@
           <div class="role-head"><h3>Founder &amp; Independent Technical Consultant</h3><span class="role-dates">Nov 2024 – Present</span></div>
           <div class="role-org">Self-funded AI Startup · India / remote</div>
           <ul>
-            <li>Architecting and building an enterprise API gateway / integration management platform and a
-              Banking Copilot AI Agent as founding engineer — agentic orchestration, RAG retrieval, MCP tool
-              integration and LLM APIs, on Spring Boot, Kubernetes and AWS.</li>
-            <li>Run the entire codebase with AI-assisted development (Claude Code, GitHub Copilot) as a deliberate
-              delivery-speed strategy for a single-engineer product.</li>
+            <li>Architecting an enterprise API gateway / integration management platform with a small engineering
+              team, and building a Banking Copilot AI Agent solo as founding engineer — agentic orchestration, RAG
+              retrieval, MCP tool integration and LLM APIs, on Spring Boot, Kubernetes and AWS.</li>
+            <li>Run the Banking Copilot codebase with AI-assisted development (Claude Code, GitHub Copilot) as a
+              deliberate delivery-speed strategy for a single-engineer product; own architecture and code review
+              for the API Gateway team.</li>
             <li>Advise organisations on cloud adoption, application architecture and technology roadmaps alongside
               the product work.</li>
           </ul>
@@ -899,7 +924,7 @@
                 <li>Designed the configuration-driven onboarding model so integrations are declared, versioned and promoted across environments without redeployment.</li>
                 <li>Built the ReactJS/TypeScript administration console for service registration, policy configuration and traffic inspection.</li>
                 <li>Containerised with Docker and deployed on Kubernetes; owns the full build and deployment path.</li>
-                <li>Used AI-assisted development (Claude Code, Copilot) across the codebase as the delivery model for a solo build.</li>
+                <li>Uses AI-assisted development (Claude Code, Copilot) across the codebase, working alongside the engineering team to accelerate delivery.</li>
               </ul></div>
             <div class="annex-block"><span class="annex-label">Roadmap</span><p>Next phase: exposing registered services to models as typed, governed tools through MCP, so agentic applications — including the Banking Copilot AI Agent — reach enterprise systems through the same policy, audit and observability controls that already govern API traffic.</p></div>
           </div>
@@ -933,7 +958,7 @@
             <span class="annex-id">C</span>
             <span class="annex-title-wrap">
               <span class="annex-title">MyEstate</span>
-              <span class="annex-meta">Founder &amp; Developer · real estate marketplace, no-broker model</span>
+              <span class="annex-meta">Founder &amp; Solution Architect · real estate marketplace, no-broker model</span>
             </span>
             <span class="annex-dates">Nov 2024 – Present</span>
             <span class="badge" style="--bc:var(--green);">Beta</span>
@@ -941,7 +966,7 @@
           </summary>
           <div class="annex-body">
 <p>A real estate marketplace connecting property owners, tenants and buyers directly — no broker, no middleman commission — in the mould of NoBroker's model. Listings, search and direct contact between owners and seekers.</p>
-            <div class="annex-block"><span class="annex-label">Why</span><p>Built solo alongside the AI work, applying the same end-to-end delivery approach to a different market: direct-to-consumer real estate. No AI component — a straightforward marketplace app.</p></div>
+            <div class="annex-block"><span class="annex-label">Why</span><p>Architected and led alongside the AI work, with a small engineering team, applying the same end-to-end delivery discipline to a different market: direct-to-consumer real estate. No AI component — a straightforward marketplace app.</p></div>
             <div class="annex-block"><span class="annex-label">Capabilities</span><p>Property listings · Search &amp; filters · Direct owner contact · No broker fees</p></div>
             <div class="annex-block"><span class="annex-label">Platform</span><p>Flutter · Java · Spring Boot · REST APIs · MySQL</p></div>
           </div>
@@ -1286,14 +1311,28 @@
       <span class="eyebrow reveal" style="--acc:var(--blue);">Contact</span>
       <h2 class="reveal" style="margin-top:14px;">Let's talk.</h2>
       <p class="reveal" style="margin-top:18px; max-width:520px; color:var(--text-soft); font-size:17px;">
-        Open to AI Solution Engineer, AI Lead and AI Product Lead roles — immediate joiner, based in India, with
-        prior work authorisation in Malaysia.</p>
+        Open to Technical Lead, Technical Manager, Product Lead, Solution Architect, AI Solution Engineer, AI Lead
+        and AI Product Lead roles — immediate joiner, based in India, with prior work authorisation in Malaysia.</p>
       <div class="contact-grid reveal">
         <div class="contact-links">
-          <a href="mailto:sathiya.nan6@gmail.com">sathiya.nan6@gmail.com</a>
-          <a href="tel:+919600915511">+91 96009 15511</a>
-          <a href="tel:+601111822456">+60 11 1182 2456</a>
-          <a href="https://linkedin.com/in/sathiya-narayanan-9a0343b6" target="_blank" rel="noopener">linkedin.com/in/sathiya-narayanan-9a0343b6</a>
+          <a href="mailto:sathiya.nan6@gmail.com" style="--acc:var(--blue);">
+            <span class="clink-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="clink-text">sathiya.nan6@gmail.com</span>
+          </a>
+          <a href="tel:+919600915511" style="--acc:var(--green);">
+            <span class="clink-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 2-2z"/></svg></span>
+            <span class="clink-text">+91 96009 15511</span>
+            <span class="tag">India · Call &amp; WhatsApp</span>
+          </a>
+          <a href="tel:+601111822456" style="--acc:var(--violet);">
+            <span class="clink-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 2-2z"/></svg></span>
+            <span class="clink-text">+60 11 1182 2456</span>
+            <span class="tag">Malaysia · Call only</span>
+          </a>
+          <a href="https://linkedin.com/in/sathiya-narayanan-9a0343b6" target="_blank" rel="noopener" style="--acc:var(--cyan);">
+            <span class="clink-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></span>
+            <span class="clink-text">linkedin.com/in/sathiya-narayanan-9a0343b6</span>
+          </a>
         </div>
         <div class="footer-meta">Based in India<br>Prior work authorisation: Malaysia<br>Notice period: immediate</div>
       </div>
@@ -1303,7 +1342,6 @@
   <footer>
     <div class="wrap footer-inner">
       <span>Sathiya Narayanan Murugesan</span>
-      <span>Built with an AI-assisted workflow — same practice used on the products above.</span>
     </div>
   </footer>
 </div>
@@ -1419,7 +1457,7 @@
 
   // active nav + dotnav highlighting on scroll
   (function(){
-    var sections = ['top','about','building','experience','skills','contact'];
+    var sections = ['top','about','building','experience','annexure','skills','education','contact'];
     var navLinks = document.querySelectorAll('.side-nav a');
     var dotLinks = document.querySelectorAll('.dotnav a');
     function setActive(id){
